@@ -1,0 +1,1 @@
+rootProject.name = "creator-flow-log-kotlin"

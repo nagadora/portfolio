@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Art Guard Lab – 画像保護フィルタ実験ツール</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="page-root">
+      <header class="site-header">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mark">YK</span>
+          <span class="logo-text">Yuki Creator Dev Portfolio</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="../../index.html#projects">← Projects</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero project-hero">
+          <h1 class="hero-title">
+            Art Guard Lab – 画像保護フィルタ実験ツール
+          </h1>
+
+          <p class="hero-lead">
+            人の目には綺麗に見えることを大事にしながら、生成系 AI に学習させにくくする画像変換を試すための実験ツールです。
+          </p>
+
+          <div class="project-meta">
+            <span>Role: 個人開発</span>
+            <span>Tech: TypeScript / Kotlin / Python / C# / Unity</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Overview</h2>
+          <p class="about-text">
+            画像に対してウォーターマークやノイズ付与など複数の処理を組み合わせ、
+            生成系 AI による特徴抽出を難しくしつつ、人間が見るぶんには違和感を抑えた出力を目指すプロジェクトです。
+            「完全な防御」ではなく、クリエイターが取れる選択肢を少しでも増やしたいという思いからスタートしています。
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Architecture &amp; Tech Stack</h2>
+
+          <div class="project-tech-grid">
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">
+                TypeScript（Web / ツール UI）
+              </h3>
+              <p>
+                Before / After の比較ビューや、フィルタ設定のプレビュー UI を TypeScript で実装。
+                手元でパラメータをいじりながら結果の雰囲気を確認できる Web ツールを想定しています。
+              </p>
+              <p class="about-text">
+                ソースコード：
+                <code>code/art-guard-lab/ts/</code>
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">
+                Kotlin（CLI / 軽いサーバー）
+              </h3>
+              <p>
+                どのフィルタをどの順番で適用するか、パラメータをどう組み合わせるかといったパイプライン定義や設定管理を Kotlin で記述。
+                CLI ツールや軽量 API サーバーとして動作させる想定です。
+              </p>
+              <p class="about-text">
+                ソースコード：
+                <code>code/art-guard-lab/kotlin/</code>
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">Python（画像処理 / AI 評価）</h3>
+              <p>
+                実際の画像処理は Python ライブラリ（Pillow / OpenCV など）で実装し、
+                バッチ処理でまとめて変換。将来的には AI モデルを用いた効果検証や自動評価も Python 側で行う予定です。
+              </p>
+              <p class="about-text">
+                ソースコード：
+                <code>code/art-guard-lab/python/</code>
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">
+                C# / Unity（Live2D 周辺）
+              </h3>
+              <p>
+                変換済みテクスチャを Live2D や 2D/3D モデルに貼ったときの見え方を確認するため、
+                Unity 上にビューアシーンを用意し、C# スクリプトから操作できる構成を想定しています。
+              </p>
+              <p class="about-text">
+                ソースコード（構想・メモ含む）：
+                <code>code/art-guard-lab/unity-csharp/</code>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Code Layout</h2>
+          <p class="about-text">
+            このプロジェクトのコードは、ポートフォリオリポジトリ内で次のように配置しています。
+          </p>
+          <p class="about-text">
+            TypeScript（Web / ツール）：<br />
+            <code>code/art-guard-lab/ts/</code><br />
+            Kotlin（CLI / 軽いサーバー）：<br />
+            <code>code/art-guard-lab/kotlin/</code><br />
+            Python（AI・画像処理）：<br />
+            <code>code/art-guard-lab/python/</code><br />
+            C# / Unity（Live2D 周辺）：<br />
+            <code>code/art-guard-lab/unity-csharp/</code>
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Live Demo（ブラウザ版イメージ）</h2>
+          <p class="about-text">
+            ここでは、本番の Python / Unity 処理ではなく、ブラウザだけで確認できる簡易フィルタデモを載せています。<br />
+            スライダーを動かすと、「保護フィルタ」の強さを擬似的に変化させたときの雰囲気を確認できます。
+          </p>
+
+          <div
+            id="agl-demo"
+            class="skill-card"
+            style="margin-top: 16px; display: grid; gap: 12px;"
+          >
+            <div style="font-size: 12px; color: #6b7280;">
+              強さ:
+              <span id="agl-strength-label">50</span>%
+            </div>
+            <input
+              type="range"
+              id="agl-strength"
+              min="0"
+              max="100"
+              value="50"
+              style="width: 100%;"
+            />
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 10px;
+              "
+            >
+              <div>
+                <div style="font-size: 12px; margin-bottom: 4px;">Original</div>
+                <div
+                  id="agl-original"
+                  style="
+                    height: 140px;
+                    border-radius: 16px;
+                    background-image: linear-gradient(135deg, #93c5fd, #f97373);
+                    background-size: cover;
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      background-image: linear-gradient(
+                        135deg,
+                        rgba(255, 255, 255, 0.15),
+                        rgba(15, 23, 42, 0.15)
+                      );
+                      mix-blend-mode: soft-light;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 12px; margin-bottom: 4px;">
+                  Protected Preview
+                </div>
+                <div
+                  id="agl-protected"
+                  style="
+                    height: 140px;
+                    border-radius: 16px;
+                    background-image: linear-gradient(135deg, #93c5fd, #f97373);
+                    background-size: cover;
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <canvas
+                    id="agl-noise-layer"
+                    width="280"
+                    height="280"
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      width: 100%;
+                      height: 100%;
+                      mix-blend-mode: soft-light;
+                      opacity: 0.4;
+                      pointer-events: none;
+                    "
+                  ></canvas>
+                  <div
+                    id="agl-filter-overlay"
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      pointer-events: none;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            (function () {
+              function generateNoise(canvas) {
+                const ctx = canvas.getContext("2d");
+                if (!ctx) return;
+                const w = canvas.width;
+                const h = canvas.height;
+                const imageData = ctx.createImageData(w, h);
+                for (let i = 0; i < imageData.data.length; i += 4) {
+                  const v = 128 + Math.random() * 127;
+                  imageData.data[i] = v;
+                  imageData.data[i + 1] = v;
+                  imageData.data[i + 2] = v;
+                  imageData.data[i + 3] = 255;
+                }
+                ctx.putImageData(imageData, 0, 0);
+              }
+
+              function setup() {
+                const strengthInput = document.getElementById("agl-strength");
+                const strengthLabel = document.getElementById("agl-strength-label");
+                const overlay = document.getElementById("agl-filter-overlay");
+                const noiseCanvas = document.getElementById("agl-noise-layer");
+                if (!strengthInput || !overlay || !strengthLabel || !noiseCanvas) {
+                  return;
+                }
+
+                generateNoise(noiseCanvas);
+
+                function update() {
+                  const value = Number(strengthInput.value || 0);
+                  strengthLabel.textContent = String(value);
+                  const blur = (value / 100) * 2.0; // 最大 2px
+                  const contrast = 1.0 + (value / 100) * 0.2; // 最大 +20%
+                  const saturation = 1.0 - (value / 100) * 0.3; // 最大 -30%
+                  overlay.style.backdropFilter = `blur(${blur}px)`;
+                  overlay.style.filter = `contrast(${contrast}) saturate(${saturation})`;
+                  overlay.style.backgroundColor = `rgba(255, 255, 255, ${
+                    value / 300
+                  })`;
+                }
+
+                strengthInput.addEventListener("input", update);
+                update();
+              }
+
+              if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", setup);
+              } else {
+                setup();
+              }
+            })();
+          </script>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2025 Shota Kuramoto</p>
+      </footer>
+    </div>
+  </body>
+</html>

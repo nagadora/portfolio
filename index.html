@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Creator Dev Portfolio</title>
+    <link rel="stylesheet" href="web/styles.css" />
+  </head>
+
+  <body>
+    <div class="page-root">
+      <header class="site-header">
+        <a href="./index.html" class="logo">
+          <span class="logo-mark">Shota Kuamoto</span>
+          <span class="logo-text">Creator Dev Portfolio</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#code-layout">Code</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1 class="hero-title">
+            クリエイターの困りごとを、やさしいコードでほどく。
+          </h1>
+
+          <p class="hero-lead">
+            TypeScript × Kotlin × Python × Unity。  
+            制作の流れをそっと支える、クリエイター向けツールを作っています。
+          </p>
+        </section>
+
+        <section id="skills" class="section">
+          <h2 class="section-title">Skills</h2>
+
+          <div class="skills-grid">
+            <div class="skill-card skill-main">
+              <h3 class="skill-title">TypeScript（Web / ツール）</h3>
+              <p>
+                Web ツール・インタラクティブ UI の実装を担当。  
+                小さなアイデアでも、すぐ形にできる軽快さを活かしています。
+              </p>
+            </div>
+
+            <div class="skill-card">
+              <h3 class="skill-title">Kotlin（CLI / 軽量サーバー）</h3>
+              <p>
+                制作ログ管理や内部ロジックなど、  
+                「動きの根っこ」を支える処理を Kotlin で書いています。
+              </p>
+            </div>
+
+            <div class="skill-card">
+              <h3 class="skill-title">Python（AI / 自動化）</h3>
+              <p>
+                画像処理、AI 実験、自動化スクリプトなど、  
+                裏側で静かに働くワークフローを Python で構築しています。
+              </p>
+            </div>
+
+            <div class="skill-card">
+              <h3 class="skill-title">C# / Unity（Live2D 周辺）</h3>
+              <p>
+                モデル確認ツールや軽いビューアづくりなど、  
+                表現の世界と技術をつなぐ部分を Unity で試作しています。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <h2 class="section-title">Projects</h2>
+
+          <div class="projects-grid">
+
+            <article class="project-card">
+              <h3 class="project-title">Creator Flow Log – 制作ログ・ミニエコシステム</h3>
+              <p class="project-summary">
+                イラスト・Live2D 制作の進捗やメモをまとめて扱える制作ログツール。  
+                Web / Kotlin / Python を組み合わせたマルチ構成です。
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Kotlin</span>
+                <span class="tag">Python</span>
+              </div>
+
+              <a href="web/projects/creator-flow-log.html" class="project-link">
+                詳細を見る
+              </a>
+            </article>
+
+            <article class="project-card">
+              <h3 class="project-title">Art Guard Lab – 画像保護フィルタ実験ツール</h3>
+              <p class="project-summary">
+                「人には自然、AI には学習しにくい」画像変換を研究するためのツール。  
+                多段フィルタ・実験 UI・Unity 表示などで検証しています。
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Kotlin</span>
+                <span class="tag">Python</span>
+                <span class="tag">C# / Unity</span>
+              </div>
+
+              <a href="web/projects/art-guard-lab.html" class="project-link">
+                詳細を見る
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section id="code-layout" class="section">
+          <h2 class="section-title">Code Layout</h2>
+
+          <p class="about-text">
+            プロジェクトごとに、言語と役割でディレクトリを明確に分割しています。
+          </p>
+
+          <p class="about-text">
+            Creator Flow Log：<br>
+            <code>code/creator-flow-log/ts/</code>（Web ツール）<br>
+            <code>code/creator-flow-log/kotlin/</code>（Kotlin / CLI）<br>
+            <code>code/creator-flow-log/python/</code>（自動化 / AI）<br>
+            <code>code/creator-flow-log/unity-csharp/</code>（Unity）
+          </p>
+
+          <p class="about-text" style="margin-top:12px;">
+            Art Guard Lab：<br>
+            <code>code/art-guard-lab/ts/</code><br>
+            <code>code/art-guard-lab/kotlin/</code><br>
+            <code>code/art-guard-lab/python/</code><br>
+            <code>code/art-guard-lab/unity-csharp/</code>
+          </p>
+        </section>
+
+        <section id="about" class="section">
+          <h2 class="section-title">About Me</h2>
+          <p class="about-text">
+            クリエイターの創作時間を守るためのツールづくりに関心があります。  
+            イラスト・Live2D の制作現場で感じる小さな「不便」を、  
+            技術の力でそっと支えられるような開発を続けています。
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2025 Shota Kuramoto</p>
+      </footer>
+    </div>
+  </body>
+</html>

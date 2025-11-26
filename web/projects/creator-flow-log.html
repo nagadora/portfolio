@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Creator Flow Log – 制作ログ・ミニエコシステム</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="page-root">
+      <header class="site-header">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mark">YK</span>
+          <span class="logo-text">Yuki Creator Dev Portfolio</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="../../index.html#projects">← Projects</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero project-hero">
+          <h1 class="hero-title">
+            Creator Flow Log – 制作ログ・ミニエコシステム
+          </h1>
+
+          <p class="hero-lead">
+            イラストや Live2D 制作の進行状況やメモを、軽いツールで記録して振り返れるようにする制作ログツールです。
+          </p>
+
+          <div class="project-meta">
+            <span>Role: 個人開発</span>
+            <span>Tech: TypeScript / Kotlin / Python / C# / Unity</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Overview</h2>
+          <p class="about-text">
+            複数の案件・キャラクター・締切を抱えていると、「どの作業をどこまで進めたか」「どんな調整をしたか」が分かりにくくなります。
+            Creator Flow Log は、そういった制作の断片を簡単に残しておき、あとから落ち着いて振り返れるようにするためのミニエコシステムです。
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Architecture &amp; Tech Stack</h2>
+
+          <div class="project-tech-grid">
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">
+                TypeScript（Web / ツール UI）
+              </h3>
+              <p>
+                ブラウザ上で動く入力フォームや一覧・フィルタリング UI を TypeScript で実装。
+                制作の合間にすぐ開いてメモできるライトな Web ツールを目指しています。
+              </p>
+              <p class="about-text">
+                ソースコード：
+                <code>code/creator-flow-log/ts/</code>
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">
+                Kotlin（CLI / 軽いサーバー）
+              </h3>
+              <p>
+                制作ログのデータモデルや JSON での永続化、CLI ツールや簡易 API を Kotlin で実装。
+                PC からの操作や他ツールとの連携がしやすい構成にしています。
+              </p>
+              <p class="about-text">
+                ソースコード：
+                <code>code/creator-flow-log/kotlin/</code>
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">Python（AI・自動化）</h3>
+              <p>
+                PSD からのサムネイル生成、画像の一括リサイズ、将来的にはタグの自動提案など、
+                制作ログとつながる補助処理を Python スクリプトで担当する想定です。
+              </p>
+              <p class="about-text">
+                ソースコード：
+                <code>code/creator-flow-log/python/</code>
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">
+                C# / Unity（Live2D 周辺）
+              </h3>
+              <p>
+                記録した制作データとあわせて、Unity 上でモデルや表情差分を確認するビューアなどを検討している領域です。
+                実際の見え方とログを行き来できる形を目指しています。
+              </p>
+              <p class="about-text">
+                ソースコード（構想・メモ含む）：
+                <code>code/creator-flow-log/unity-csharp/</code>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Code Layout</h2>
+          <p class="about-text">
+            このプロジェクトのコードは、ポートフォリオリポジトリ内で次のように配置しています。
+          </p>
+          <p class="about-text">
+            TypeScript（Web / ツール）：<br />
+            <code>code/creator-flow-log/ts/</code><br />
+            Kotlin（CLI / 軽いサーバー）：<br />
+            <code>code/creator-flow-log/kotlin/</code><br />
+            Python（AI・自動化）：<br />
+            <code>code/creator-flow-log/python/</code><br />
+            C# / Unity（Live2D 周辺）：<br />
+            <code>code/creator-flow-log/unity-csharp/</code>
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Live Demo（ブラウザ版ミニデモ）</h2>
+          <p class="about-text">
+            ブラウザだけで動く制作記録の簡易デモです。<br />
+            日付・内容・タグを入力して「追加」を押すと、下の一覧に記録が増えていきます。
+            データはブラウザのローカルストレージに保存されます。
+          </p>
+
+          <div id="cfl-demo" class="skill-card" style="margin-top: 16px;">
+            <form id="cfl-form" style="display: grid; gap: 8px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 12px;">日付</label><br />
+                <input
+                  type="date"
+                  id="cfl-date"
+                  style="width: 100%; padding: 6px; border-radius: 8px; border: 1px solid #e5e7eb;"
+                />
+              </div>
+              <div>
+                <label style="font-size: 12px;">内容（例：髪の毛の塗り直し）</label><br />
+                <input
+                  type="text"
+                  id="cfl-content"
+                  placeholder="作業メモを入力"
+                  style="width: 100%; padding: 6px; border-radius: 8px; border: 1px solid #e5e7eb;"
+                />
+              </div>
+              <div>
+                <label style="font-size: 12px;">タグ（カンマ区切り）</label><br />
+                <input
+                  type="text"
+                  id="cfl-tags"
+                  placeholder="#Live2D, #表情差分, #修正 など"
+                  style="width: 100%; padding: 6px; border-radius: 8px; border: 1px solid #e5e7eb;"
+                />
+              </div>
+              <button
+                type="submit"
+                style="
+                  padding: 6px 10px;
+                  border-radius: 999px;
+                  border: none;
+                  background: linear-gradient(135deg, #f472b6, #a855f7);
+                  color: #fff;
+                  font-size: 13px;
+                  cursor: pointer;
+                  justify-self: flex-start;
+                "
+              >
+                記録を追加
+              </button>
+            </form>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #6b7280;">最近の記録（ブラウザ内保存）</span>
+              <button
+                type="button"
+                id="cfl-clear"
+                style="
+                  padding: 4px 8px;
+                  border-radius: 999px;
+                  border: 1px solid #e5e7eb;
+                  background: #fff;
+                  font-size: 11px;
+                  cursor: pointer;
+                "
+              >
+                全件クリア
+              </button>
+            </div>
+
+            <ul
+              id="cfl-list"
+              style="
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                gap: 6px;
+                font-size: 12px;
+              "
+            >
+              <!-- JS でレコードが追加されます -->
+            </ul>
+          </div>
+
+          <script>
+            (function () {
+              const KEY = "creatorFlowLogDemo_v1";
+
+              function loadLogs() {
+                try {
+                  const raw = localStorage.getItem(KEY);
+                  if (!raw) return [];
+                  const parsed = JSON.parse(raw);
+                  if (!Array.isArray(parsed)) return [];
+                  return parsed;
+                } catch {
+                  return [];
+                }
+              }
+
+              function saveLogs(logs) {
+                try {
+                  localStorage.setItem(KEY, JSON.stringify(logs));
+                } catch (e) {
+                  console.warn("保存に失敗しました", e);
+                }
+              }
+
+              function renderLogs(logs) {
+                const listEl = document.getElementById("cfl-list");
+                if (!listEl) return;
+                listEl.innerHTML = "";
+
+                if (logs.length === 0) {
+                  const li = document.createElement("li");
+                  li.textContent = "まだ記録はありません。";
+                  li.style.color = "#9ca3af";
+                  listEl.appendChild(li);
+                  return;
+                }
+
+                logs
+                  .slice()
+                  .reverse()
+                  .forEach((log) => {
+                    const li = document.createElement("li");
+                    li.style.padding = "6px 8px";
+                    li.style.borderRadius = "10px";
+                    li.style.border = "1px solid #e5e7eb";
+                    li.style.background = "#fff";
+
+                    const dateSpan = document.createElement("div");
+                    dateSpan.textContent = log.date || "日付未入力";
+                    dateSpan.style.fontSize = "11px";
+                    dateSpan.style.color = "#6b7280";
+
+                    const contentDiv = document.createElement("div");
+                    contentDiv.textContent = log.content || "内容未入力";
+                    contentDiv.style.marginTop = "2px";
+
+                    const tagDiv = document.createElement("div");
+                    tagDiv.style.marginTop = "4px";
+                    tagDiv.style.display = "flex";
+                    tagDiv.style.flexWrap = "wrap";
+                    tagDiv.style.gap = "4px";
+
+                    (log.tags || []).forEach((tag) => {
+                      const span = document.createElement("span");
+                      span.textContent = tag.trim();
+                      span.style.fontSize = "10px";
+                      span.style.padding = "2px 6px";
+                      span.style.borderRadius = "999px";
+                      span.style.background = "#fde4f1";
+                      span.style.color = "#9d174d";
+                      tagDiv.appendChild(span);
+                    });
+
+                    li.appendChild(dateSpan);
+                    li.appendChild(contentDiv);
+                    if (log.tags && log.tags.length > 0) {
+                      li.appendChild(tagDiv);
+                    }
+                    listEl.appendChild(li);
+                  });
+              }
+
+              function setup() {
+                const form = document.getElementById("cfl-form");
+                const dateInput = document.getElementById("cfl-date");
+                const contentInput = document.getElementById("cfl-content");
+                const tagsInput = document.getElementById("cfl-tags");
+                const clearBtn = document.getElementById("cfl-clear");
+                if (!form || !contentInput) return;
+
+                let logs = loadLogs();
+                renderLogs(logs);
+
+                form.addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  const date = dateInput && dateInput.value ? dateInput.value : "";
+                  const content = contentInput.value.trim();
+                  const tagsRaw = tagsInput && tagsInput.value ? tagsInput.value : "";
+                  const tags =
+                    tagsRaw
+                      .split(",")
+                      .map((t) => t.trim())
+                      .filter(Boolean) || [];
+
+                  if (!content) {
+                    alert("内容を入力してください。");
+                    return;
+                  }
+
+                  logs.push({ date, content, tags });
+                  saveLogs(logs);
+                  renderLogs(logs);
+                  contentInput.value = "";
+                });
+
+                if (clearBtn) {
+                  clearBtn.addEventListener("click", function () {
+                    if (!confirm("ブラウザに保存された記録をすべて削除しますか？")) {
+                      return;
+                    }
+                    logs = [];
+                    saveLogs(logs);
+                    renderLogs(logs);
+                  });
+                }
+              }
+
+              if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", setup);
+              } else {
+                setup();
+              }
+            })();
+          </script>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2025 Shota Kuramoto</p>
+      </footer>
+    </div>
+  </body>
+</html>
