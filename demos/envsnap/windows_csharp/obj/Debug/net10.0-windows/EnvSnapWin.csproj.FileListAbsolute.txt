@@ -1,0 +1,15 @@
+E:\portfolio\demos\envsnap\windows_csharp\bin\Debug\net10.0-windows\EnvSnapWin.exe
+E:\portfolio\demos\envsnap\windows_csharp\bin\Debug\net10.0-windows\EnvSnapWin.deps.json
+E:\portfolio\demos\envsnap\windows_csharp\bin\Debug\net10.0-windows\EnvSnapWin.runtimeconfig.json
+E:\portfolio\demos\envsnap\windows_csharp\bin\Debug\net10.0-windows\EnvSnapWin.dll
+E:\portfolio\demos\envsnap\windows_csharp\bin\Debug\net10.0-windows\EnvSnapWin.pdb
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.GeneratedMSBuildEditorConfig.editorconfig
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.AssemblyInfoInputs.cache
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.AssemblyInfo.cs
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.csproj.CoreCompileInputs.cache
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.sourcelink.json
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.dll
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\refint\EnvSnapWin.dll
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.pdb
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\EnvSnapWin.genruntimeconfig.cache
+E:\portfolio\demos\envsnap\windows_csharp\obj\Debug\net10.0-windows\ref\EnvSnapWin.dll

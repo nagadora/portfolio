@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>EnvSnap – 問い合わせ用環境情報ヘルパー</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <div class="page-root">
+      <header class="site-header">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mark">SK</span>
+          <span class="logo-text">Creator Dev Portfolio</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="../../index.html#projects">Projects</a>
+          <a href="../../index.html#skills">Skills</a>
+          <a href="../../index.html#code-layout">Code</a>
+          <a href="../../index.html#about">About</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero project-hero">
+          <h1 class="hero-title">EnvSnap – 問い合わせ用環境情報ヘルパー</h1>
+          <p class="hero-lead">
+            OS / CPU / メモリなどの環境情報を自動で取得し、  
+            Live2D Cubism などのお問い合わせフォームにそのまま貼り付けられる形で  
+            出力する小さなユーティリティです。
+          </p>
+
+          <div class="project-meta">
+            <span>C# / Kotlin / Python</span>
+            <span>Windows / macOS</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Overview</h2>
+          <p class="about-text">
+            Live2D Cubism のお問い合わせフォームでは、OS名・PC機種名・CPU / GPU 型番・
+            メモリ容量など、多くの環境情報を手入力する必要があります。  
+            EnvSnap は「毎回これを調べて書くのは大変」という実感から生まれたツールで、  
+            ワンクリックで環境情報を取得し、テキストとしてコピーできるようにすることを  
+            目的としています。
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Tech & Role</h2>
+
+          <div class="project-tech-grid">
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">Python コア</h3>
+              <p class="about-text">
+                OS / CPU / メモリ / GPU などの情報取得と整形ロジックを Python で実装し、  
+                Windows / macOS 共通の「コア」として扱います。
+              </p>
+            </div>
+
+            <div class="project-tech-card">
+              <h3 class="project-tech-title">C# / Kotlin ラッパー</h3>
+              <p class="about-text">
+                Windows 向けに C#、macOS / JVM 向けに Kotlin を用いて、  
+                ボタン一つで実行・コピーができる軽い UI / CLI ラッパーを用意する構成を  
+                想定しています。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Motivation</h2>
+          <p class="about-text">
+            実際にお問い合わせフォームを確認した際、  
+            「不具合を共有したいだけなのに、環境情報をまとめるだけで手間がかかる」  
+            と感じたことがきっかけです。  
+            単に不満として指摘するのではなく、  
+            自分自身や他のクリエイターが少しでも楽になるツールとして形にしています。
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2025 Shota Kuramoto</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -2,16 +2,19 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Creator Dev Portfolio</title>
-    <link rel="stylesheet" href="web/styles.css" />
+    <link rel="stylesheet" href="docs/styles.css" />
   </head>
 
   <body>
     <div class="page-root">
       <header class="site-header">
         <a href="./index.html" class="logo">
-          <span class="logo-mark">Shota Kuamoto</span>
+          <span class="logo-mark">SK</span>
           <span class="logo-text">Creator Dev Portfolio</span>
         </a>
 
@@ -24,6 +27,7 @@
       </header>
 
       <main>
+        <!-- Hero -->
         <section class="hero">
           <h1 class="hero-title">
             クリエイターの困りごとを、やさしいコードでほどく。
@@ -35,6 +39,7 @@
           </p>
         </section>
 
+        <!-- Skills -->
         <section id="skills" class="section">
           <h2 class="section-title">Skills</h2>
 
@@ -73,11 +78,12 @@
           </div>
         </section>
 
+        <!-- Projects -->
         <section id="projects" class="section">
           <h2 class="section-title">Projects</h2>
 
           <div class="projects-grid">
-
+            <!-- Creator Flow Log -->
             <article class="project-card">
               <h3 class="project-title">Creator Flow Log – 制作ログ・ミニエコシステム</h3>
               <p class="project-summary">
@@ -91,11 +97,12 @@
                 <span class="tag">Python</span>
               </div>
 
-              <a href="web/projects/creator-flow-log.html" class="project-link">
+              <a href="docs/projects/creator-flow-log.html" class="project-link">
                 詳細を見る
               </a>
             </article>
 
+            <!-- Art Guard Lab -->
             <article class="project-card">
               <h3 class="project-title">Art Guard Lab – 画像保護フィルタ実験ツール</h3>
               <p class="project-summary">
@@ -110,13 +117,34 @@
                 <span class="tag">C# / Unity</span>
               </div>
 
-              <a href="web/projects/art-guard-lab.html" class="project-link">
+              <a href="docs/projects/art-guard-lab.html" class="project-link">
+                詳細を見る
+              </a>
+            </article>
+
+            <!-- EnvSnap -->
+            <article class="project-card">
+              <h3 class="project-title">EnvSnap – 問い合わせ用環境情報ヘルパー</h3>
+              <p class="project-summary">
+                Live2D Cubism などの問い合わせフォームで必要になる  
+                OS / CPU / メモリ等の環境情報を、自動取得してコピペしやすい形で出力する  
+                小さなユーティリティです。Windows / macOS 両対応を想定しています。
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">C#</span>
+                <span class="tag">Kotlin</span>
+                <span class="tag">Python</span>
+              </div>
+
+              <a href="docs/projects/envsnap.html" class="project-link">
                 詳細を見る
               </a>
             </article>
           </div>
         </section>
 
+        <!-- Code Layout -->
         <section id="code-layout" class="section">
           <h2 class="section-title">Code Layout</h2>
 
@@ -125,22 +153,30 @@
           </p>
 
           <p class="about-text">
-            Creator Flow Log：<br>
-            <code>code/creator-flow-log/ts/</code>（Web ツール）<br>
-            <code>code/creator-flow-log/kotlin/</code>（Kotlin / CLI）<br>
-            <code>code/creator-flow-log/python/</code>（自動化 / AI）<br>
+            Creator Flow Log：<br />
+            <code>code/creator-flow-log/ts/</code>（Web ツール）<br />
+            <code>code/creator-flow-log/kotlin/</code>（Kotlin / CLI）<br />
+            <code>code/creator-flow-log/python/</code>（自動化 / AI）<br />
             <code>code/creator-flow-log/unity-csharp/</code>（Unity）
           </p>
 
-          <p class="about-text" style="margin-top:12px;">
-            Art Guard Lab：<br>
-            <code>code/art-guard-lab/ts/</code><br>
-            <code>code/art-guard-lab/kotlin/</code><br>
-            <code>code/art-guard-lab/python/</code><br>
+          <p class="about-text" style="margin-top: 12px">
+            Art Guard Lab：<br />
+            <code>code/art-guard-lab/ts/</code><br />
+            <code>code/art-guard-lab/kotlin/</code><br />
+            <code>code/art-guard-lab/python/</code><br />
             <code>code/art-guard-lab/unity-csharp/</code>
+          </p>
+
+          <p class="about-text" style="margin-top: 12px">
+            EnvSnap：<br />
+            <code>code/envsnap/csharp/</code>（Windows 向け）<br />
+            <code>code/envsnap/kotlin/</code>（macOS / JVM）<br />
+            <code>code/envsnap/python/</code>（共通ロジック）
           </p>
         </section>
 
+        <!-- About -->
         <section id="about" class="section">
           <h2 class="section-title">About Me</h2>
           <p class="about-text">
